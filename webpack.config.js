@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 
 /** @type {import('webpack').Configuration} */
 module.exports ={
@@ -6,7 +6,7 @@ module.exports ={
     output:{
         path: path.resolve(__dirname, "dist"),
         filename: "[name].[contenthash].js",
-        publicPath: "",
+        publicPath: ""
     },
     mode:"production",
     module:{
@@ -16,9 +16,13 @@ module.exports ={
                 test: /.(js|jsx)$/,
                 exclude: /node_modules/,
             },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
         ],
     },
     resolve:{
-        extensions:[".js", "jsx", ".json"]
+        extensions:[".js", ".jsx", ".json"],
     },
 };
