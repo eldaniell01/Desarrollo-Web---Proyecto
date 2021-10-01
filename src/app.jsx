@@ -1,17 +1,10 @@
-import React, { useState } from "react";
-function app(){
-    const [name, setname] = useState("");
-    return(
-        <div className="app">
-            <h1>
-                hola
-            </h1>
-            <div>
-                <label htmlFor="name">nombre: </label>
-                <input type="text" id="name" value={name} onChange={(e) => setname(e.target.value)} />
-            </div>
-        </div>
-    );
+import React from "react"
+
+function app() {
+    return (<div>
+        <h2>Welcome to React App</h2>
+        <h3>Date : {new Date().toDateString()}</h3>
+    </div>)
 }
 
-export default app;
+export default app
